@@ -1,0 +1,4 @@
+interface:
+  display_name: "Video Course Notes"
+  short_description: "Turn Bilibili or YouTube videos into rich course notes."
+  default_prompt: "Use $video-course-notes to turn this Bilibili or YouTube video into structured Chinese course notes. Ask for the desired output format if it is not specified."
