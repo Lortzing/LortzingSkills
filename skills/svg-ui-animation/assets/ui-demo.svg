@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="750" height="720" viewBox="0 0 750 720" role="img" aria-labelledby="demo-title demo-description">
+  <title id="demo-title">三步，完成组织关联</title>
+  <desc id="demo-description">原创界面示意：光标打开设置，选择研究小组，点击关联组织，等待加载并显示连接成功。十二秒自动循环。</desc>
+  <!-- 所有文字、颜色、坐标可直接修改。主时间轴为 12 秒；所有资源均在此 SVG 内。 -->
+  <defs>
+    <pattern id="paper-fibres" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M5 11h5 M31 39h6 M36 18h3" fill="none" stroke="#b6aa95" stroke-width="0.55" opacity="0.12"/>
+    </pattern>
+  </defs>
+
+  <!-- 纸面与标题 -->
+  <rect width="750" height="720" fill="#f5f0e6"/>
+  <rect width="750" height="720" fill="url(#paper-fibres)"/>
+  <g font-family="'Noto Sans CJK SC','PingFang SC','Microsoft YaHei',sans-serif">
+    <text x="375" y="58" text-anchor="middle" font-size="16" letter-spacing="3" fill="#8c8476">深蓝 · 操作演示</text>
+    <text x="375" y="120" text-anchor="middle" font-size="36" font-weight="600" letter-spacing="1" fill="#272722">三步，完成组织关联</text>
+    <text x="375" y="154" text-anchor="middle" font-size="14" fill="#8c8476">打开设置 · 选择组织 · 连接成功</text>
+    <path d="M42 179H708" fill="none" stroke="#d9d1c2" stroke-width="1"/>
+
+    <!-- 应用静态框架：虚构的深蓝工作台 -->
+    <g id="workspace-frame">
+      <rect x="40" y="204" width="670" height="375" rx="19" fill="#2b302c" opacity="0.05"/>
+      <rect x="40" y="198" width="670" height="375" rx="19" fill="#ffffff" stroke="#dddcd5" stroke-width="1.4"/>
+      <path d="M41 256H709" stroke="#e9e8e1" stroke-width="1"/>
+      <rect x="60" y="214" width="28" height="28" rx="8" fill="#2f6852"/>
+      <path d="M68 223h12 M68 229h8 M68 235h12" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+      <text x="101" y="235" font-size="18" font-weight="600" fill="#32372f">深蓝工作台</text>
+      <rect x="618" y="216" width="73" height="24" rx="12" fill="#f3f3ee"/>
+      <text x="654.5" y="233" text-anchor="middle" font-size="11" fill="#92958a">界面示意</text>
+      <path d="M195 257V572" stroke="#eeede6" stroke-width="1"/>
+      <rect x="55" y="271" width="125" height="38" rx="8" fill="#f4f5f1"/>
+      <path d="M72 284h11v11H72z M77.5 284v11 M72 289.5h11" fill="none" stroke="#7d8276" stroke-width="1.2"/>
+      <text x="94" y="296" font-size="14" fill="#5a6154">概览</text>
+      <path d="M71 326h5l3 3h8v10H71z" fill="none" stroke="#969b8f" stroke-width="1.3" stroke-linejoin="round"/>
+      <text x="94" y="339" font-size="14" fill="#8b9084">项目空间</text>
+      <path d="M73 379v-5a5 5 0 0 1 10 0v5l2 3H71z M76 385h4" fill="none" stroke="#969b8f" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="94" y="383" font-size="14" fill="#8b9084">消息通知</text>
+
+      <!-- 第一次点击后，设置入口显示选中态。 -->
+      <g id="settings-highlight" opacity="0">
+        <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.1283;0.1292;0.9083;0.9583;1" dur="12s" repeatCount="indefinite"/>
+        <rect x="55" y="456" width="125" height="42" rx="9" fill="#eaf1e9"/>
+      </g>
+      <circle cx="78" cy="477" r="7" fill="none" stroke="#63715e" stroke-width="1.4"/>
+      <circle cx="78" cy="477" r="2.3" fill="none" stroke="#63715e" stroke-width="1.3"/>
+      <path d="M78 467v3 M78 484v3 M68 477h3 M85 477h3" stroke="#63715e" stroke-width="1.4" stroke-linecap="round"/>
+      <text x="97" y="483" font-size="15" font-weight="500" fill="#485541">设置</text>
+      <circle cx="76" cy="543" r="12" fill="#edece3"/>
+      <text x="76" y="547" text-anchor="middle" font-size="11" font-weight="600" fill="#7a7c6f">林</text>
+      <text x="96" y="547" font-size="12" fill="#999b90">演示账户</text>
+    </g>
+
+    <!-- 初始主页，弹窗关闭后回到完全相同的首帧。 -->
+    <g id="overview-content">
+      <text x="226" y="297" font-size="23" font-weight="600" fill="#343a31">个人工作台</text>
+      <text x="226" y="322" font-size="13" fill="#94998c">你的项目、组织与协作空间</text>
+      <rect x="226" y="345" width="214" height="103" rx="12" fill="#f6f7f2" stroke="#eceee5"/>
+      <rect x="456" y="345" width="220" height="103" rx="12" fill="#fcfbf6" stroke="#eceee5"/>
+      <text x="246" y="374" font-size="12" fill="#94988a">项目空间</text>
+      <text x="246" y="419" font-size="32" font-weight="500" fill="#455440">03</text>
+      <text x="476" y="374" font-size="12" fill="#94988a">已关联组织</text>
+      <text x="476" y="419" font-size="32" font-weight="500" fill="#455440">—</text>
+      <circle cx="234" cy="490" r="3" fill="#799272"/>
+      <text x="246" y="495" font-size="13" fill="#8a9281">从设置开始，连接你的协作空间</text>
+    </g>
+
+    <!-- 弹窗从 1.65 秒开始出现，11.5 秒前收回。 -->
+    <g id="dialog-veil" opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.1375;0.1625;0.9083;0.9583;1" dur="12s" repeatCount="indefinite"/>
+      <rect x="201" y="260" width="504" height="307" rx="13" fill="#f6f7f2" opacity="0.9"/>
+    </g>
+    <g id="organization-dialog" opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.1375;0.1625;0.9083;0.9583;1" dur="12s" repeatCount="indefinite"/>
+      <g id="dialog-position" transform="translate(0 14)">
+        <animateTransform attributeName="transform" type="translate" values="0 14;0 14;0 0;0 0;0 14;0 14" keyTimes="0;0.1375;0.175;0.9083;0.9583;1" calcMode="spline" keySplines="0 0 1 1;0.16 1 0.3 1;0 0 1 1;0.42 0 0.58 1;0 0 1 1" dur="12s" repeatCount="indefinite"/>
+        <rect x="213" y="278" width="467" height="265" rx="17" fill="#27382c" opacity="0.07"/>
+        <rect x="213" y="272" width="467" height="265" rx="17" fill="#ffffff" stroke="#e0e4da" stroke-width="1.2"/>
+
+        <!-- 组织表单；7.8 秒后切换成成功状态。 -->
+        <g id="organization-form" opacity="1">
+          <animate attributeName="opacity" values="1;1;0;0;1;1" keyTimes="0;0.65;0.6533;0.9542;0.9583;1" dur="12s" repeatCount="indefinite"/>
+          <text x="237" y="311" font-size="23" font-weight="600" fill="#333b2e">关联一个组织</text>
+          <text x="237" y="337" font-size="13" fill="#8a9281">选择要连接到当前工作台的空间</text>
+          <rect x="237" y="353" width="421" height="49" rx="9" fill="#fcfcf9" stroke="#e5e9df"/>
+          <rect x="237" y="409" width="421" height="49" rx="9" fill="#fcfcf9" stroke="#e5e9df"/>
+          <circle cx="258" cy="377" r="7.5" fill="#ffffff" stroke="#c5cdbd" stroke-width="1.4"/>
+          <circle cx="258" cy="433" r="7.5" fill="#ffffff" stroke="#c5cdbd" stroke-width="1.4"/>
+
+          <!-- 4.4 秒选中研究小组：边框、radio 与按钮一起变化。 -->
+          <g id="selected-organization" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.3658;0.3667;0.9542;0.9583;1" dur="12s" repeatCount="indefinite"/>
+            <rect x="237" y="353" width="421" height="49" rx="9" fill="#edf4eb" stroke="#8bac7e" stroke-width="1.3"/>
+            <circle cx="258" cy="377" r="7.5" fill="#ffffff" stroke="#3d7658" stroke-width="1.5"/>
+            <circle cx="258" cy="377" r="4" fill="#3d7658"/>
+          </g>
+          <text x="283" y="374" font-size="15" font-weight="500" fill="#4a5541">研究小组</text>
+          <text x="283" y="392" font-size="11" fill="#8d9684">3 个项目 · 共享工作空间</text>
+          <text x="283" y="430" font-size="15" font-weight="500" fill="#616b57">个人空间</text>
+          <text x="283" y="448" font-size="11" fill="#969e8c">仅你可见</text>
+          <text x="463" y="503" text-anchor="end" font-size="13" fill="#9aa28e">取消</text>
+
+          <g id="button-disabled">
+            <rect x="500" y="480" width="158" height="36" rx="8" fill="#ebeee5"/>
+            <text x="579" y="503" text-anchor="middle" font-size="13" font-weight="500" fill="#a2ad96">关联组织</text>
+          </g>
+          <g id="button-ready" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.3658;0.3667;0.5492;0.55;1" dur="12s" repeatCount="indefinite"/>
+            <rect x="500" y="480" width="158" height="36" rx="8" fill="#2f6852"/>
+            <text x="579" y="503" text-anchor="middle" font-size="13" font-weight="500" fill="#ffffff">关联组织</text>
+          </g>
+
+          <!-- 加载环 0.8 秒转一圈，不使用滤镜或外部素材。 -->
+          <g id="button-loading" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.5492;0.55;0.65;0.6533;1" dur="12s" repeatCount="indefinite"/>
+            <rect x="500" y="480" width="158" height="36" rx="8" fill="#2f6852"/>
+            <g transform="translate(532 498)">
+              <circle r="6" fill="none" stroke="#ffffff" stroke-width="1.6" opacity="0.25"/>
+              <g id="loading-spinner">
+                <animateTransform attributeName="transform" type="rotate" values="0;360" keyTimes="0;1" dur="0.8s" repeatCount="indefinite"/>
+                <path d="M0 -6a6 6 0 0 1 6 6" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round"/>
+              </g>
+            </g>
+            <text x="588" y="503" text-anchor="middle" font-size="13" font-weight="500" fill="#ffffff">正在关联</text>
+          </g>
+        </g>
+
+        <!-- 成功态预留约 3 秒阅读时间。 -->
+        <g id="connection-success" opacity="0">
+          <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.65;0.6792;0.9083;0.9583;1" dur="12s" repeatCount="indefinite"/>
+          <g transform="translate(447 353)">
+            <g id="success-mark" transform="scale(0.84)">
+              <animateTransform attributeName="transform" type="scale" values="0.84;0.84;1.06;1;1" keyTimes="0;0.65;0.6792;0.7083;1" calcMode="spline" keySplines="0 0 1 1;0.16 1 0.3 1;0.16 1 0.3 1;0 0 1 1" dur="12s" repeatCount="indefinite"/>
+              <circle r="37" fill="#edf4e8"/>
+              <circle r="27" fill="#3e7756"/>
+              <path d="M-12 0l9 9 17-19" fill="none" stroke="#ffffff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+          </g>
+          <text x="447" y="418" text-anchor="middle" font-size="26" font-weight="600" fill="#384d32">连接成功</text>
+          <text x="447" y="445" text-anchor="middle" font-size="13" fill="#87947a">研究小组已连接至当前工作台</text>
+          <rect x="369" y="467" width="156" height="30" rx="15" fill="#f0f5eb"/>
+          <circle cx="388" cy="482" r="3" fill="#70955f"/>
+          <text x="401" y="487" font-size="12" fill="#72915e">工作空间已就绪</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- 三次点击波纹；外层确定位置，内层只做缩放与透明度变化。 -->
+    <g id="click-settings" transform="translate(126 479)">
+      <g opacity="0">
+        <animate attributeName="opacity" values="0;0;0.65;0;0" keyTimes="0;0.1283;0.1292;0.1742;1" dur="12s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="scale" values="0.2;0.2;1.35;1.35" keyTimes="0;0.1292;0.1742;1" calcMode="spline" keySplines="0 0 1 1;0.16 1 0.3 1;0 0 1 1" dur="12s" repeatCount="indefinite"/>
+        <circle r="17" fill="#85a673" fill-opacity="0.17" stroke="#5f8751" stroke-width="1.6"/>
+      </g>
+    </g>
+    <g id="click-organization" transform="translate(258 377)">
+      <g opacity="0">
+        <animate attributeName="opacity" values="0;0;0.65;0;0" keyTimes="0;0.3658;0.3667;0.4117;1" dur="12s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="scale" values="0.2;0.2;1.35;1.35" keyTimes="0;0.3667;0.4117;1" calcMode="spline" keySplines="0 0 1 1;0.16 1 0.3 1;0 0 1 1" dur="12s" repeatCount="indefinite"/>
+        <circle r="17" fill="#85a673" fill-opacity="0.17" stroke="#5f8751" stroke-width="1.6"/>
+      </g>
+    </g>
+    <g id="click-connect" transform="translate(555 499)">
+      <g opacity="0">
+        <animate attributeName="opacity" values="0;0;0.7;0;0" keyTimes="0;0.5492;0.55;0.595;1" dur="12s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="scale" values="0.2;0.2;1.35;1.35" keyTimes="0;0.55;0.595;1" calcMode="spline" keySplines="0 0 1 1;0.16 1 0.3 1;0 0 1 1" dur="12s" repeatCount="indefinite"/>
+        <circle r="17" fill="#91b880" fill-opacity="0.2" stroke="#8eac79" stroke-width="1.6"/>
+      </g>
+    </g>
+
+    <!-- 演示光标：路径为本样例原创，只有预设轨迹，不执行任何操作。 -->
+    <g id="demo-cursor" opacity="1">
+      <animate attributeName="opacity" values="1;1;0;0;1;1" keyTimes="0;0.675;0.7;0.9583;0.9833;1" dur="12s" repeatCount="indefinite"/>
+      <g transform="translate(632 531)">
+        <animateTransform attributeName="transform" type="translate" values="632 531;632 531;126 479;126 479;258 377;258 377;555 499;555 499;630 525;630 525;632 531;632 531" keyTimes="0;0.05;0.1167;0.2917;0.35;0.475;0.5333;0.675;0.7333;0.9083;0.9583;1" calcMode="spline" keySplines="0 0 1 1;0.42 0 0.58 1;0 0 1 1;0.42 0 0.58 1;0 0 1 1;0.42 0 0.58 1;0 0 1 1;0.42 0 0.58 1;0 0 1 1;0.42 0 0.58 1;0 0 1 1" dur="12s" repeatCount="indefinite"/>
+        <path d="M2 3v27l7.8-7 5.5 11 5.2-2.8-5.5-10.6H25z" fill="#243126" opacity="0.13"/>
+        <path d="M0 0v27l7.8-7 5.5 11 5.2-2.8L13 17.6H23z" fill="#ffffff" stroke="#303a2c" stroke-width="1.7" stroke-linejoin="round"/>
+      </g>
+    </g>
+
+    <!-- 底部三阶段提示。默认态 + 三组高亮，保持布局不跳动。 -->
+    <g id="progress-track" fill="none" stroke="#cfc8b9" stroke-width="1.2">
+      <path d="M247 622h29m-4-4 4 4-4 4 M472 622h29m-4-4 4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g id="steps-base" fill="#a69e8c" font-size="16">
+      <circle cx="80" cy="622" r="14" fill="#e9e3d7"/>
+      <text x="80" y="627" text-anchor="middle" font-size="12">1</text>
+      <text x="104" y="628">打开设置</text>
+      <circle cx="306" cy="622" r="14" fill="#e9e3d7"/>
+      <text x="306" y="627" text-anchor="middle" font-size="12">2</text>
+      <text x="330" y="628">选择组织</text>
+      <circle cx="532" cy="622" r="14" fill="#e9e3d7"/>
+      <text x="532" y="627" text-anchor="middle" font-size="12">3</text>
+      <text x="556" y="628">连接成功</text>
+    </g>
+    <g id="step-one-active" opacity="1">
+      <animate attributeName="opacity" values="1;1;0;0;1;1" keyTimes="0;0.1375;0.15;0.9458;0.9583;1" dur="12s" repeatCount="indefinite"/>
+      <circle cx="80" cy="622" r="14" fill="#3f6c52"/>
+      <text x="80" y="627" text-anchor="middle" font-size="12" fill="#ffffff">1</text>
+      <text x="104" y="628" font-size="16" font-weight="500" fill="#3c5734">打开设置</text>
+    </g>
+    <g id="step-two-active" opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.1375;0.15;0.65;0.6667;1" dur="12s" repeatCount="indefinite"/>
+      <circle cx="306" cy="622" r="14" fill="#3f6c52"/>
+      <text x="306" y="627" text-anchor="middle" font-size="12" fill="#ffffff">2</text>
+      <text x="330" y="628" font-size="16" font-weight="500" fill="#3c5734">选择组织</text>
+    </g>
+    <g id="step-three-active" opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.65;0.6667;0.9458;0.9583;1" dur="12s" repeatCount="indefinite"/>
+      <circle cx="532" cy="622" r="14" fill="#3f6c52"/>
+      <text x="532" y="627" text-anchor="middle" font-size="12" fill="#ffffff">3</text>
+      <text x="556" y="628" font-size="16" font-weight="500" fill="#3c5734">连接成功</text>
+    </g>
+    <text x="375" y="679" text-anchor="middle" font-size="13" fill="#9b9283">跟随光标，完成一次连接</text>
+  </g>
+</svg>

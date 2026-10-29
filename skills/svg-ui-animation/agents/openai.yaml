@@ -1,0 +1,4 @@
+interface:
+  display_name: "SVG 界面动画"
+  short_description: "制作可编辑的 SVG 界面操作动画，支持光标、弹窗与视频导出"
+  default_prompt: "使用 $svg-ui-animation，根据我的描述或参考素材制作一段界面操作动画，并导出可编辑 SVG、GIF 和 MP4。"
